@@ -109,11 +109,16 @@ You can use our training configurations provided in `configs/segmentation`:
 # Results
 
 ## Image Classification
-![](images/visualization.png)
-### ImageNet
+Feature maps from ResNet50, MLP-Mixer-B/16, our Pure-MLP Baseline and ConvMLP-M are
+presented in the image below.
+It can be observed that representations learned by ConvMLP involve 
+more low-level features like edges or textures compared to the rest.
+![Feature map visualization](images/visualization.png)
+
 <table style="width:100%">
     <thead>
         <tr>
+            <td><b>Dataset</b></td> 
             <td><b>Model</b></td> 
             <td><b>Top-1 Accuracy</b></td> 
             <td><b># Params</b></td> 
@@ -122,6 +127,7 @@ You can use our training configurations provided in `configs/segmentation`:
     </thead>
     <tbody>
         <tr>
+            <td rowspan="3">ImageNet</td>
             <td>ConvMLP-S</td>
 	        <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/convmlp_s_imagenet.pth" target="_blank">76.8%</a></td>
 	        <td>9.0M</td>
@@ -142,15 +148,25 @@ You can use our training configurations provided in `configs/segmentation`:
     </tbody>
 </table>
 
-You could also set `pretrained=True` when initializing the models to download and set these checkpoints.
+If importing the classification models, you can pass `pretrained=True` 
+to download and set these checkpoints. The same holds for the training 
+script (`classification.py` and `dist_classification.sh`): 
+pass `--pretrained`. The segmentation/detection training scripts also
+download the pretrained backbone if you pass the correct config files.
 
-## Object Detection
+## Downstream tasks
+You can observe the summarized results from applying our model to object detection, instance 
+and semantic segmentation, compared to ResNet, in the image below.
 ![](images/detseg.png)
-### Mask R-CNN
+
+### Object Detection
+
 <table style="width:100%">
     <thead>
         <tr>
+            <td><b>Dataset</b></td> 
             <td><b>Model</b></td> 
+            <td><b>Backbone</b></td> 
             <td><b># Params</b></td> 
             <td><b>AP<sup>b</sup></b></td> 
             <td><b>AP<sup>b</sup><sub>50</sub></b></td> 
@@ -160,6 +176,8 @@ You could also set `pretrained=True` when initializing the models to download an
     </thead>
     <tbody>
         <tr>
+            <td rowspan="6">MS COCO</td>
+            <td rowspan="3">Mask R-CNN</td>
             <td>ConvMLP-S</td>
 	        <td>28.7M</td>
 	        <td>38.4</td>
@@ -183,34 +201,13 @@ You could also set `pretrained=True` when initializing the models to download an
 	        <td>45.5</td>
             <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/detection/maskrcnn_convmlp_l_coco.pth" target="_blank">Download</a>
         </tr>
-    </tbody>
-</table>
-
-### RetinaNet
-<table style="width:100%">
-    <thead>
         <tr>
-            <td><b>Model</b></td> 
-            <td><b># Params</b></td> 
-            <td><b>AP<sup>b</sup></b></td> 
-            <td><b>AP<sup>b</sup><sub>50</sub></b></td> 
-            <td><b>AP<sup>b</sup><sub>75</sub></b></td> 
-            <td><b>AP<sup>b</sup><sub>S</sub></b></td> 
-            <td><b>AP<sup>b</sup><sub>M</sub></b></td> 
-            <td><b>AP<sup>b</sup><sub>L</sub></b></td> 
-            <td><b>Checkpoint</b></td> 
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
+            <td rowspan="3">RetinaNet</td>
             <td>ConvMLP-S</td>
 	        <td>18.7M</td>
 	        <td>37.2</td>
 	        <td>56.4</td>
 	        <td>39.8</td>
-	        <td>20.1</td>
-	        <td>40.7</td>
-	        <td>50.4</td>
             <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/detection/retinanet_convmlp_s_coco.pth" target="_blank">Download</a>
         </tr>
         <tr>
@@ -219,9 +216,6 @@ You could also set `pretrained=True` when initializing the models to download an
 	        <td>39.4</td>
 	        <td>58.7</td>
 	        <td>42.0</td>
-	        <td>21.5</td>
-	        <td>43.2</td>
-	        <td>52.5</td>
             <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/detection/retinanet_convmlp_m_coco.pth" target="_blank">Download</a>
         </tr>
         <tr>
@@ -230,20 +224,18 @@ You could also set `pretrained=True` when initializing the models to download an
 	        <td>40.2</td>
 	        <td>59.3</td>
 	        <td>43.3</td>
-	        <td>23.5</td>
-	        <td>43.8</td>
-	        <td>53.3</td>
             <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/detection/retinanet_convmlp_l_coco.pth" target="_blank">Download</a>
         </tr>
     </tbody>
 </table>
 
-## Instance Segmentation
-### Mask R-CNN
+### Instance Segmentation
 <table style="width:100%">
     <thead>
         <tr>
+            <td><b>Dataset</b></td> 
             <td><b>Model</b></td> 
+            <td><b>Backbone</b></td> 
             <td><b># Params</b></td>
             <td><b>AP<sup>m</sup></b></td> 
             <td><b>AP<sup>m</sup><sub>50</sub></b></td> 
@@ -253,6 +245,8 @@ You could also set `pretrained=True` when initializing the models to download an
     </thead>
     <tbody>
         <tr>
+            <td rowspan="3">MS COCO</td>
+            <td rowspan="3">Mask R-CNN</td>
             <td>ConvMLP-S</td>
 	        <td>28.7M</td>
 	        <td>35.7</td>
@@ -279,11 +273,13 @@ You could also set `pretrained=True` when initializing the models to download an
     </tbody>
 </table>
 
-## Semantic Segmentation
+### Semantic Segmentation
 <table style="width:100%">
     <thead>
         <tr>
+            <td><b>Dataset</b></td> 
             <td><b>Model</b></td> 
+            <td><b>Backbone</b></td> 
             <td><b># Params</b></td> 
             <td><b>mIoU</b></td>
             <td><b>Checkpoint</b></td> 
@@ -291,6 +287,8 @@ You could also set `pretrained=True` when initializing the models to download an
     </thead>
     <tbody>
         <tr>
+            <td rowspan="3">ADE20k</td>
+            <td rowspan="3">Semantic FPN</td>
             <td>ConvMLP-S</td>
 	        <td>12.8M</td>
             <td>35.8</td>
@@ -311,7 +309,7 @@ You could also set `pretrained=True` when initializing the models to download an
     </tbody>
 </table>
 
-## Transfer
+### Transfer
 <table style="width:100%">
     <thead>
         <tr>
