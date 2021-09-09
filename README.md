@@ -5,8 +5,8 @@
 Preprint will be available soon.
 
 By [Jiachen Li<sup>[1,2]</sup>](https://chrisjuniorli.github.io/),
-[Ali Hassani<sup>[2]</sup><span>&#42;</span>](https://alihassanijr.com/),
-[Steven Walton<sup>[2,3]</sup><span>&#42;</span>](https://stevenwalton.github.io/),
+[Ali Hassani<sup>[1]</sup><span>&#42;</span>](https://alihassanijr.com/),
+[Steven Walton<sup>[1]</sup><span>&#42;</span>](https://stevenwalton.github.io/),
 and
 [Humphrey Shi<sup>[1,2,3]</sup>](https://www.humphreyshi.com/)
 
