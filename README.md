@@ -11,7 +11,7 @@ and
 [Humphrey Shi<sup>[1,2,3]</sup>](https://www.humphreyshi.com/)
 
 In association with SHI Lab @ University of Oregon<sup>[1]</sup> and 
-University of Illinois-Urbana Champaign<sup>[2]</sup>, and 
+University of Illinois Urbana-Champaign<sup>[2]</sup>, and 
 Picsart AI Research (PAIR)<sup>[3]</sup>
 
 ![Comparison](images/comparison.png)
@@ -109,6 +109,7 @@ You can use our training configurations provided in `configs/segmentation`:
 # Results
 
 ## Image Classification
+![](images/visualization.png)
 ### ImageNet
 <table style="width:100%">
     <thead>
@@ -144,6 +145,7 @@ You can use our training configurations provided in `configs/segmentation`:
 You could also set `pretrained=True` when initializing the models to download and set these checkpoints.
 
 ## Object Detection
+![](images/detseg.png)
 ### Mask R-CNN
 <table style="width:100%">
     <thead>
