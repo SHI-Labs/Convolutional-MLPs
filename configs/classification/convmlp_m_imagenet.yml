@@ -1,0 +1,44 @@
+num_classes: 1000
+img_size: 224
+mean:
+    - 0.485
+    - 0.456
+    - 0.406
+std:
+    - 0.229
+    - 0.224
+    - 0.225
+amp: True
+epochs: 300
+cooldown_epochs: 10
+warmup_epochs: 5
+patience_epochs: 10
+batch_size: 128
+lr: 0.0005
+min_lr: 1e-5
+sched: cosine
+weight_decay: 0.05
+seed: 42
+opt: adamw
+opt_eps: 1.0e-08
+smoothing: 0.1
+model: convmlp_m_classification
+model_ema: true
+model_ema_decay: 0.99996
+crop_pct: 0.9
+hflip: 0.5
+vflip: 0.0
+ratio:
+    - 0.75
+    - 1.3333333333333333
+train_interpolation: bicubic
+recount: 1
+remode: pixel
+reprob: 0.25
+aa: rand-m9-mstd0.5-inc1
+mixup: 0.8
+mixup_mode: batch
+mixup_off_epoch: 0
+mixup_prob: 1.0
+mixup_switch_prob: 0.5
+cutmix: 1.0
