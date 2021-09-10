@@ -2,7 +2,8 @@
 
 **ConvMLP: Hierarchical Convolutional MLPs for Vision**
 
-Preprint will be available soon.
+Preprint link: [ConvMLP: Hierarchical Convolutional MLPs for Vision
+](https://arxiv.org/abs/2109.04454)
 
 By [Jiachen Li<sup>[1,2]</sup>](https://chrisjuniorli.github.io/),
 [Ali Hassani<sup>[1]</sup><span>&#42;</span>](https://alihassanijr.com/),
@@ -375,8 +376,11 @@ and semantic segmentation, compared to ResNet, in the image below.
 # Citation
 ```bibtex
 @article{li2021convmlp,
-	title        = {ConvMLP: Hierarchical Convolutional MLPs for Vision},
-	author       = {Jiachen Li and Ali Hassani and Steven Walton and Humphrey Shi},
-	year         = 2021
+      title={ConvMLP: Hierarchical Convolutional MLPs for Vision}, 
+      author={Jiachen Li and Ali Hassani and Steven Walton and Humphrey Shi},
+      year={2021},
+      eprint={2109.04454},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
 ```
