@@ -63,6 +63,21 @@ You can use our training configurations provided in `configs/classification`:
 ./dist_classification.sh 8 -c configs/classification/convmlp_l_imagenet.yml /path/to/ImageNet
 ```
 
+<details>
+<summary>Running other torchvision datasets.</summary>
+WARNING: This may not always work as intended. Be sure to check that you have
+properly created the config files for this to work.
+
+We support running arbitrary [torchvision
+datasets](https://pytorch.org/vision/stable/datasets.html). To do this you need
+to edit the config files to include the new dataset and prepend with "tv-". For
+example, if you want to run ConvMLP with CIFAR10 you should have `dataset:
+tv-CIFAR10` in the yaml file. Capitalization (of the dataset) matters. You are
+also able to download the datasets by adding `download: True`, but it is
+suggested not to do this. We suggest this because you will need to calculate the
+mean and standard deviation for each dataset to get the best results.
+</details>
+
 
 ## Object Detection
 [mmdetection](https://github.com/open-mmlab/mmdetection) is recommended for object detection training

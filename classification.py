@@ -489,11 +489,11 @@ def main():
             dataset_eval  = tvdataset(root=args.data_dir, train=False)
         except TypeError: # Errors when train keyword doesn't exist
             try:
-                dataset_train = tvdataset(root=args.data_dir, split='train', download=args.download)
-                dataset_eval  = tvdataset(root=args.data_dir, split='test', download=args.download)
+                dataset_train = tvdataset(root=args.data_dir, split=args.train_split, download=args.download)
+                dataset_eval  = tvdataset(root=args.data_dir, split=args.val_split, download=args.download)
             except RuntimeError:
-                dataset_train = tvdataset(root=args.data_dir, split='train')
-                dataset_eval  = tvdataset(root=args.data_dir, split='test')
+                dataset_train = tvdataset(root=args.data_dir, split=args.train_split)
+                dataset_eval  = tvdataset(root=args.data_dir, split=args.val_split)
         except Exception as e:
             print(f"Couldn't load the dataset. Got error: {e}")
 
