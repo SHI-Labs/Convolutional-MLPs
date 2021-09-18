@@ -25,9 +25,11 @@ from contextlib import suppress
 from datetime import datetime
 from importlib import import_module
 
+
 import torch
 import torch.nn as nn
 import torchvision.utils
+import torch.distributed as dist
 from torch.nn.parallel import DistributedDataParallel as NativeDDP
 
 from timm.data import create_dataset, create_loader, resolve_data_config, Mixup, FastCollateMixup, AugMixDataset
@@ -479,8 +481,22 @@ def main():
     if args.dataset[:2].lower() == "tv":
         ''' Imports an arbitrary torchvision dataset if it begins with 'tv-' '''
         tvdataset = getattr(import_module("torchvision.datasets"), args.dataset[3:])
-        dataset_train = tvdataset(root=args.data_dir, train=True, download=args.download)
-        dataset_test  = tvdataset(root=args.data_dir, train=False, download=args.download)
+        try:
+            dataset_train = tvdataset(root=args.data_dir, train=True, download=args.download)
+            dataset_eval  = tvdataset(root=args.data_dir, train=False, download=args.download)
+        except RuntimeError: # Errors because parallel download
+            dataset_train = tvdataset(root=args.data_dir, train=True)
+            dataset_eval  = tvdataset(root=args.data_dir, train=False)
+        except TypeError: # Errors when train keyword doesn't exist
+            try:
+                dataset_train = tvdataset(root=args.data_dir, split='train', download=args.download)
+                dataset_eval  = tvdataset(root=args.data_dir, split='test', download=args.download)
+            except RuntimeError:
+                dataset_train = tvdataset(root=args.data_dir, split='train')
+                dataset_eval  = tvdataset(root=args.data_dir, split='test')
+        except Exception as e:
+            print(f"Couldn't load the dataset. Got error: {e}")
+
     else:
         dataset_train = create_dataset(
             args.dataset,
@@ -489,6 +505,7 @@ def main():
         dataset_eval = create_dataset(
             args.dataset, root=args.data_dir, split=args.val_split, is_training=False, batch_size=args.batch_size)
 
+    dist.barrier()
     # setup mixup / cutmix
     collate_fn = None
     mixup_fn = None
