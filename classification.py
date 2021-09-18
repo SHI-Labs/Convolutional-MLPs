@@ -23,10 +23,13 @@ import logging
 from collections import OrderedDict
 from contextlib import suppress
 from datetime import datetime
+from importlib import import_module
+
 
 import torch
 import torch.nn as nn
 import torchvision.utils
+import torch.distributed as dist
 from torch.nn.parallel import DistributedDataParallel as NativeDDP
 
 from timm.data import create_dataset, create_loader, resolve_data_config, Mixup, FastCollateMixup, AugMixDataset
@@ -79,6 +82,8 @@ parser.add_argument('data_dir', metavar='DIR',
                     help='path to dataset')
 parser.add_argument('--dataset', '-d', metavar='NAME', default='',
                     help='dataset type (default: ImageFolder/ImageTar if empty)')
+parser.add_argument('--download', action='store_true',
+                    help="Download the dataset. Used for torchvision datasets.")
 parser.add_argument('--train-split', metavar='NAME', default='train',
                     help='dataset train split (default: train)')
 parser.add_argument('--val-split', metavar='NAME', default='validation',
@@ -473,13 +478,34 @@ def main():
         _logger.info('Scheduled epochs: {}'.format(num_epochs))
 
     # create the train and eval datasets
-    dataset_train = create_dataset(
-        args.dataset,
-        root=args.data_dir, split=args.train_split, is_training=True,
-        batch_size=args.batch_size, repeats=args.epoch_repeats)
-    dataset_eval = create_dataset(
-        args.dataset, root=args.data_dir, split=args.val_split, is_training=False, batch_size=args.batch_size)
+    if args.dataset[:2].lower() == "tv":
+        ''' Imports an arbitrary torchvision dataset if it begins with 'tv-' '''
+        tvdataset = getattr(import_module("torchvision.datasets"), args.dataset[3:])
+        try:
+            dataset_train = tvdataset(root=args.data_dir, train=True, download=args.download)
+            dataset_eval  = tvdataset(root=args.data_dir, train=False, download=args.download)
+        except RuntimeError: # Errors because parallel download
+            dataset_train = tvdataset(root=args.data_dir, train=True)
+            dataset_eval  = tvdataset(root=args.data_dir, train=False)
+        except TypeError: # Errors when train keyword doesn't exist
+            try:
+                dataset_train = tvdataset(root=args.data_dir, split=args.train_split, download=args.download)
+                dataset_eval  = tvdataset(root=args.data_dir, split=args.val_split, download=args.download)
+            except RuntimeError:
+                dataset_train = tvdataset(root=args.data_dir, split=args.train_split)
+                dataset_eval  = tvdataset(root=args.data_dir, split=args.val_split)
+        except Exception as e:
+            print(f"Couldn't load the dataset. Got error: {e}")
 
+    else:
+        dataset_train = create_dataset(
+            args.dataset,
+            root=args.data_dir, split=args.train_split, is_training=True,
+            batch_size=args.batch_size, repeats=args.epoch_repeats)
+        dataset_eval = create_dataset(
+            args.dataset, root=args.data_dir, split=args.val_split, is_training=False, batch_size=args.batch_size)
+
+    dist.barrier()
     # setup mixup / cutmix
     collate_fn = None
     mixup_fn = None

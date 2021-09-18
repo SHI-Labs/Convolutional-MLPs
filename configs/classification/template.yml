@@ -1,0 +1,83 @@
+# Template configuration file
+
+# Dataset
+# dataset: mydataset # Leave empty to default to ImageFolder
+# download: False
+# You can also use torchvision datasets, as long as they are valid
+# classification datasets. Prepend the name with `tv`.
+# i.e. tv-cifar10
+train_split: train # Train split; in case your dataset expects a special directory or split name
+val_split: valid # Validation split; i.e. `val` for ImageNet, `valid` for Flowers-102
+
+num_classes: 102
+img_size: 224
+
+# Dataset statistics
+# The mean and std are computed per channel over the training set
+# This means that it is specific to each dataset.
+mean:
+    - 0.4353
+    - 0.3773
+    - 0.2872
+std:
+    - 0.2966
+    - 0.2455
+    - 0.2698
+
+
+crop_pct: 1.0 # Validation set crop percentage; usually 0.875 for ImageNet
+# Why 0.875? Because images are usually resized to 256x256 and center cropped
+# at 87.5% which gives you 224x224.
+
+# Dataloader
+train_interpolation: bicubic
+interpolation: bicubic
+batch_size: 128
+workers: 8
+
+# Data augmentations
+scale: # Random Crop scale
+    - 0.8
+    - 1.0
+ratio: # Random Crop aspect ratio
+    - 0.75
+    - 1.33
+# Augmentation Policies
+# See `timm` docs for details on this particular argument
+# Default is RandAugment with magnitude 9, magnitude std of 0.5
+aa: rand-m9-mstd0.5-inc1
+
+reprob: 0.25  # Random erase probability
+remode: pixel # Random erase mode
+
+color_jitter: 0 # Color Jitter probability
+hflip: 0        # Horizontal Flip probability
+vflip: 0        # Vertical Flip probability
+
+# Mixup and CutMix
+mixup: 0.8             # Mixup alpha
+mixup_prob: 1.0        # Mixup probability
+cutmix: 1.0            # Cutmix probability
+mixup_off_epoch: 0     # Which epoch to turn off Mixup, 0 = never
+mixup_mode: batch      # Mixup mode
+mixup_switch_prob: 0.5 # Probability of switching Mixup with CutMix
+
+
+# Training settings
+amp: True # Enable AMP: mixed-precision training
+
+## Optimization
+opt: adamw     # Optimization method
+smoothing: 0.1 # Label smoothing rate
+
+## Epochs
+epochs: 300
+cooldown_epochs: 10
+warmup_epochs: 10
+warmup_lr: 0.00001
+
+## Schedule
+lr: 5e-4
+min_lr: 1e-6
+sched: cosine
+weight_decay: 5e-2
