@@ -25,7 +25,7 @@ class ConvMLP(nn.Module):
                  num_classes=1000,
                  *args, **kwargs):
         super(ConvMLP, self).__init__()
-        assert len(blocks) == len(mlp_ratios) == len(mlp_ratios), \
+        assert len(blocks) == len(dims) == len(mlp_ratios), \
             f"blocks, dims and mlp_ratios must agree in size, {len(blocks)}, {len(dims)} and {len(mlp_ratios)} passed."
 
         self.tokenizer = ConvTokenizer(embedding_dim=channels)
