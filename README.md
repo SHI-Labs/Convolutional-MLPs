@@ -145,19 +145,19 @@ more low-level features like edges or textures compared to the rest.
         <tr>
             <td rowspan="3">ImageNet</td>
             <td>ConvMLP-S</td>
-	        <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/convmlp_s_imagenet.pth" target="_blank">76.8%</a></td>
+	        <td><a href="https://shi-labs.com/projects/convmlp/checkpoints/convmlp_s_imagenet.pth" target="_blank">76.8%</a></td>
 	        <td>9.0M</td>
             <td>2.4G</td>
         </tr>
         <tr>
             <td>ConvMLP-M</td>
-	        <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/convmlp_m_imagenet.pth" target="_blank">79.0%</a></td>
+	        <td><a href="https://shi-labs.com/projects/convmlp/checkpoints/convmlp_m_imagenet.pth" target="_blank">79.0%</a></td>
 	        <td>17.4M</td>
             <td>3.9G</td>
         </tr>
         <tr>
             <td>ConvMLP-L</td>
-	        <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/convmlp_l_imagenet.pth" target="_blank">80.2%</a></td>
+	        <td><a href="https://shi-labs.com/projects/convmlp/checkpoints/convmlp_l_imagenet.pth" target="_blank">80.2%</a></td>
 	        <td>42.7M</td>
             <td>9.9G</td>
         </tr>
@@ -199,7 +199,7 @@ and semantic segmentation, compared to ResNet, in the image below.
 	        <td>38.4</td>
 	        <td>59.8</td>
 	        <td>41.8</td>
-            <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/detection/maskrcnn_convmlp_s_coco.pth" target="_blank">Download</a>
+            <td><a href="https://shi-labs.com/projects/convmlp/checkpoints/detection/maskrcnn_convmlp_s_coco.pth" target="_blank">Download</a>
         </tr>
         <tr>
             <td>ConvMLP-M</td>
@@ -207,7 +207,7 @@ and semantic segmentation, compared to ResNet, in the image below.
 	        <td>40.6</td>
 	        <td>61.7</td>
 	        <td>44.5</td>
-            <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/detection/maskrcnn_convmlp_m_coco.pth" target="_blank">Download</a>
+            <td><a href="https://shi-labs.com/projects/convmlp/checkpoints/detection/maskrcnn_convmlp_m_coco.pth" target="_blank">Download</a>
         </tr>
         <tr>
             <td>ConvMLP-L</td>
@@ -215,7 +215,7 @@ and semantic segmentation, compared to ResNet, in the image below.
 	        <td>41.7</td>
 	        <td>62.8</td>
 	        <td>45.5</td>
-            <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/detection/maskrcnn_convmlp_l_coco.pth" target="_blank">Download</a>
+            <td><a href="https://shi-labs.com/projects/convmlp/checkpoints/detection/maskrcnn_convmlp_l_coco.pth" target="_blank">Download</a>
         </tr>
         <tr>
             <td rowspan="3">RetinaNet</td>
@@ -224,7 +224,7 @@ and semantic segmentation, compared to ResNet, in the image below.
 	        <td>37.2</td>
 	        <td>56.4</td>
 	        <td>39.8</td>
-            <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/detection/retinanet_convmlp_s_coco.pth" target="_blank">Download</a>
+            <td><a href="https://shi-labs.com/projects/convmlp/checkpoints/detection/retinanet_convmlp_s_coco.pth" target="_blank">Download</a>
         </tr>
         <tr>
             <td>ConvMLP-M</td>
@@ -232,7 +232,7 @@ and semantic segmentation, compared to ResNet, in the image below.
 	        <td>39.4</td>
 	        <td>58.7</td>
 	        <td>42.0</td>
-            <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/detection/retinanet_convmlp_m_coco.pth" target="_blank">Download</a>
+            <td><a href="https://shi-labs.com/projects/convmlp/checkpoints/detection/retinanet_convmlp_m_coco.pth" target="_blank">Download</a>
         </tr>
         <tr>
             <td>ConvMLP-L</td>
@@ -240,7 +240,7 @@ and semantic segmentation, compared to ResNet, in the image below.
 	        <td>40.2</td>
 	        <td>59.3</td>
 	        <td>43.3</td>
-            <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/detection/retinanet_convmlp_l_coco.pth" target="_blank">Download</a>
+            <td><a href="https://shi-labs.com/projects/convmlp/checkpoints/detection/retinanet_convmlp_l_coco.pth" target="_blank">Download</a>
         </tr>
     </tbody>
 </table>
@@ -268,7 +268,7 @@ and semantic segmentation, compared to ResNet, in the image below.
 	        <td>35.7</td>
 	        <td>56.7</td>
 	        <td>38.2</td>
-            <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/detection/maskrcnn_convmlp_s_coco.pth" target="_blank">Download</a>
+            <td><a href="https://shi-labs.com/projects/convmlp/checkpoints/detection/maskrcnn_convmlp_s_coco.pth" target="_blank">Download</a>
         </tr>
         <tr>
             <td>ConvMLP-M</td>
@@ -276,7 +276,7 @@ and semantic segmentation, compared to ResNet, in the image below.
 	        <td>37.2</td>
 	        <td>58.8</td>
 	        <td>39.8</td>
-            <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/detection/maskrcnn_convmlp_m_coco.pth" target="_blank">Download</a>
+            <td><a href="https://shi-labs.com/projects/convmlp/checkpoints/detection/maskrcnn_convmlp_m_coco.pth" target="_blank">Download</a>
         </tr>
         <tr>
             <td>ConvMLP-L</td>
@@ -284,7 +284,7 @@ and semantic segmentation, compared to ResNet, in the image below.
 	        <td>38.2</td>
 	        <td>59.9</td>
 	        <td>41.1</td>
-            <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/detection/maskrcnn_convmlp_l_coco.pth" target="_blank">Download</a>
+            <td><a href="https://shi-labs.com/projects/convmlp/checkpoints/detection/maskrcnn_convmlp_l_coco.pth" target="_blank">Download</a>
         </tr>
     </tbody>
 </table>
@@ -308,19 +308,19 @@ and semantic segmentation, compared to ResNet, in the image below.
             <td>ConvMLP-S</td>
 	        <td>12.8M</td>
             <td>35.8</td>
-            <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/segmentation/sem_fpn_convmlp_s_ade20k.pth" target="_blank">Download</a>
+            <td><a href="https://shi-labs.com/projects/convmlp/checkpoints/segmentation/sem_fpn_convmlp_s_ade20k.pth" target="_blank">Download</a>
         </tr>
         <tr>
             <td>ConvMLP-M</td>
 	        <td>21.1M</td>
             <td>38.6</td>
-            <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/segmentation/sem_fpn_convmlp_m_ade20k.pth" target="_blank">Download</a>
+            <td><a href="https://shi-labs.com/projects/convmlp/checkpoints/segmentation/sem_fpn_convmlp_m_ade20k.pth" target="_blank">Download</a>
         </tr>
         <tr>
             <td>ConvMLP-L</td>
 	        <td>46.3M</td>
             <td>40.0</td>
-            <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/segmentation/sem_fpn_convmlp_l_ade20k.pth" target="_blank">Download</a>
+            <td><a href="https://shi-labs.com/projects/convmlp/checkpoints/segmentation/sem_fpn_convmlp_l_ade20k.pth" target="_blank">Download</a>
         </tr>
     </tbody>
 </table>
@@ -339,49 +339,49 @@ and semantic segmentation, compared to ResNet, in the image below.
         <tr>
             <td rowspan="3">CIFAR-10</td>
             <td>ConvMLP-S</td>
-	        <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/convmlp_s_cifar10.pth" target="_blank">98.0%</a></td>
+	        <td><a href="https://shi-labs.com/projects/convmlp/checkpoints/convmlp_s_cifar10.pth" target="_blank">98.0%</a></td>
 	        <td>8.51M</td>
         </tr>
         <tr>
             <td>ConvMLP-M</td>
-	        <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/convmlp_m_cifar10.pth" target="_blank">98.6%</a></td>
+	        <td><a href="https://shi-labs.com/projects/convmlp/checkpoints/convmlp_m_cifar10.pth" target="_blank">98.6%</a></td>
 	        <td>16.90M</td>
         </tr>
         <tr>
             <td>ConvMLP-L</td>
-	        <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/convmlp_l_cifar10.pth" target="_blank">98.6%</a></td>
+	        <td><a href="https://shi-labs.com/projects/convmlp/checkpoints/convmlp_l_cifar10.pth" target="_blank">98.6%</a></td>
 	        <td>41.97M</td>
         </tr>
         <tr>
             <td rowspan="3">CIFAR-100</td>
             <td>ConvMLP-S</td>
-	        <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/convmlp_s_cifar100.pth" target="_blank">87.4%</a></td>
+	        <td><a href="https://shi-labs.com/projects/convmlp/checkpoints/convmlp_s_cifar100.pth" target="_blank">87.4%</a></td>
 	        <td>8.56M</td>
         </tr>
         <tr>
             <td>ConvMLP-M</td>
-	        <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/convmlp_m_cifar100.pth" target="_blank">89.1%</a></td>
+	        <td><a href="https://shi-labs.com/projects/convmlp/checkpoints/convmlp_m_cifar100.pth" target="_blank">89.1%</a></td>
 	        <td>16.95M</td>
         </tr>
         <tr>
             <td>ConvMLP-L</td>
-	        <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/convmlp_l_cifar100.pth" target="_blank">88.6%</a></td>
+	        <td><a href="https://shi-labs.com/projects/convmlp/checkpoints/convmlp_l_cifar100.pth" target="_blank">88.6%</a></td>
 	        <td>42.04M</td>
         </tr>
         <tr>
             <td rowspan="3">Flowers-102</td>
             <td>ConvMLP-S</td>
-	        <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/convmlp_s_flowers102.pth" target="_blank">99.5%</a></td>
+	        <td><a href="https://shi-labs.com/projects/convmlp/checkpoints/convmlp_s_flowers102.pth" target="_blank">99.5%</a></td>
 	        <td>8.56M</td>
         </tr>
         <tr>
             <td>ConvMLP-M</td>
-	        <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/convmlp_m_flowers102.pth" target="_blank">99.5%</a></td>
+	        <td><a href="https://shi-labs.com/projects/convmlp/checkpoints/convmlp_m_flowers102.pth" target="_blank">99.5%</a></td>
 	        <td>16.95M</td>
         </tr>
         <tr>
             <td>ConvMLP-L</td>
-	        <td><a href="http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/convmlp_l_flowers102.pth" target="_blank">99.5%</a></td>
+	        <td><a href="https://shi-labs.com/projects/convmlp/checkpoints/convmlp_l_flowers102.pth" target="_blank">99.5%</a></td>
 	        <td>42.04M</td>
         </tr>
     </tbody>
