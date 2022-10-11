@@ -1,6 +1,6 @@
 '''
 This script is adapted from https://github.com/yitu-opensource/T2T-ViT/blob/main/visualization_vit.ipynb
-You may define a new main_{model} to visualizate the specific model to your interests 
+You may define a new main_{model} to visualize the specific model to your interests
 '''
 import matplotlib.pyplot as plt
 import numpy as np

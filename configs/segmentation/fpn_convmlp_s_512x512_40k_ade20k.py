@@ -5,7 +5,7 @@ _base_ = [
 ]
 
 model = dict(
-    pretrained='http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/convmlp_s_imagenet.pth',
+    pretrained='https://shi-labs.com/projects/convmlp/checkpoints/convmlp_s_imagenet.pth',
     backbone=dict(type='SegConvMLPSmall'),
     neck=dict(
         type='FPN',

@@ -8,9 +8,9 @@ __all__ = ['ConvMLP', 'convmlp_s', 'convmlp_m', 'convmlp_l']
 
 
 model_urls = {
-    'convmlp_s': 'http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/convmlp_s_imagenet.pth',
-    'convmlp_m': 'http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/convmlp_m_imagenet.pth',
-    'convmlp_l': 'http://ix.cs.uoregon.edu/~alih/conv-mlp/checkpoints/convmlp_l_imagenet.pth',
+    'convmlp_s': 'https://shi-labs.com/projects/convmlp/checkpoints/convmlp_s_imagenet.pth',
+    'convmlp_m': 'https://shi-labs.com/projects/convmlp/checkpoints/convmlp_m_imagenet.pth',
+    'convmlp_l': 'https://shi-labs.com/projects/convmlp/checkpoints/convmlp_l_imagenet.pth',
 }
 
 
